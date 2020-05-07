@@ -8,7 +8,7 @@ import MovieCard from 'components//MovieCard/index.jsx';
 
 import styles from './styles.js';
 
-const base_url = `http://localhost:8000`;
+// const base_url = `http://localhost:8000`;
 const image_base_url = `https://image.tmdb.org/t/p/w500`;
 
 function MoviePage(props){
@@ -22,10 +22,10 @@ function MoviePage(props){
         (async () => {
             try {
                 setIsLoading(true);
-                const response = await axios.get(`${base_url}/api/movies/${movieId}`);
+                const response = await axios.get(`/api/movies/${movieId}`);
                 setIsLoading(false);
                 setMovie(response.data);
-                const relatedMovies = await axios.get(`${base_url}/api/movies/${movieId}/related`);
+                const relatedMovies = await axios.get(`/api/movies/${movieId}/related`);
                 setRelatedMovies(relatedMovies.data.results);
             } catch (e) {
                 console.log(e.message);

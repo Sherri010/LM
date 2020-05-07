@@ -8,7 +8,7 @@ import MovieCard from 'components/MovieCard/index.jsx';
 import MoviePage from 'components/MoviePage/index.jsx';
 import TopBannerControllers from 'components/TopBannerControllers/index.jsx';
 
-const base_url = `http://localhost:8000`;
+// const base_url = `http://localhost:8000`;
 
 export default function MoviesList(){
     const [movies, setMovies] = useState([]);
@@ -43,7 +43,7 @@ export default function MoviesList(){
     const fetchPopularMovies = async () => {
         try {
             setIsLoading(true);
-            const response = await axios.get(`${base_url}/api/movies?page=${page}`);
+            const response = await axios.get(`/api/movies?page=${page}`);
             setMovies(response.data.results);
             setTotalPages(response.data.totalPages);
             setIsLoading(false);
@@ -54,7 +54,7 @@ export default function MoviesList(){
 
     const queryMovies = async () => {
         try {
-            const response = await axios.get(`${base_url}/api/movies/search?query=${search}&page=${page}`);
+            const response = await axios.get(`/api/movies/search?query=${search}&page=${page}`);
             setMovies(response.data.results);
             setTotalPages(response.data.totalPages);
             setIsLoading(false);
@@ -65,7 +65,7 @@ export default function MoviesList(){
 
     const fetchMatchingKeyWords = async () => {
         try {
-            const response = await axios.get(`${base_url}/api/movies/keywords?query=${inputValue}`);
+            const response = await axios.get(`/api/movies/keywords?query=${inputValue}`);
             setKeyWords(response.data.results);
         } catch (e) {
             console.log(e.message);
