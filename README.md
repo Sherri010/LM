@@ -21,7 +21,7 @@ You can view this app live here: https://latticemovies.herokuapp.com/
  - run `npm run build`. This will install all dependecies including the ones specified in server and client folders.
  - run `npm start` and visit `http://localhost:8000` to view the local build. 
  
- ### Possiblee Future work:
+ ### Possible Future work:
  - add icons
  - better api error handling
  - styling can always be better!
