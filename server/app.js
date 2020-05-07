@@ -5,7 +5,7 @@ const session = require('express-session');
 const cors = require('cors');
 const errorHandler = require('errorhandler');
 const port = process.env.PORT || 8000;
-
+require('dotenv').config();
 
 const isProduction = process.env.NODE_ENV === 'production';
 
