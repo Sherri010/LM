@@ -1,0 +1,22 @@
+{
+  "name": "latticeMovies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm i && cd ./server && npm i  && cd ../client && npm i",
+    "start": "node server/app.js"
+  },
+  "engines": {
+    "node": "13.x",
+    "npm": "6.x"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "client": "file:client",
+    "server": "file:server"
+  }
+}
